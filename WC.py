@@ -21,23 +21,33 @@ name = ""
 background = None
 stopwords = None
 
+
 def grey_color(word, font_size, position, orientation, random_state=None, **kwargs):
 	return 'hsl(0, 0%%, %d%%)' % random.randint(80, 100)
+
+
 print("="*30, "폰트 색 변경 함수 생성", "="*30)
+
 
 # 파일 경로 받은 후 전역 변수 name에 저장
 def get_text_path():
 	global name
 	name = askopenfilename()
 	print(name)
+
+
 print("="*30, "텍스트 파일 업로드 함수 생성", "="*30)
+
 
 def get_img_path():
 	global background, stopwords
 	file = askopenfilename()
 	background = np.array(PIL.Image.open(file))
 	print(background)
+
+
 print("="*30, "이미지 업로드 함수 생성", "="*30)
+
 
 def make_wordcould():
 	global background, stopwords
@@ -51,7 +61,10 @@ def make_wordcould():
 	# plt.imshow(wc.recolor(color_func=grey_color, random_state=3), interpolation='bilinear')
 	plt.axis('off')
 	plt.show()
+
+
 print("="*30, "영문 워드클라우드 함수 생성", "="*30)
+
 
 def make_korean():
 	global background, stopwords
@@ -70,6 +83,8 @@ def make_korean():
 	# plt.imshow(wordcloud.recolor(color_func=grey_color, random_state=3), interpolation='bilinear')
 	plt.axis('off')
 	plt.show()
+
+
 print("="*30, "한글 워드클라우드 함수 생성", "="*30)
 
 # UI 부품 추가
